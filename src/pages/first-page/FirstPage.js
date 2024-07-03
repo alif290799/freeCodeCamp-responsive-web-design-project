@@ -1,38 +1,33 @@
 import React from "react";
-import Section from "../../components/Section";
-import firstpage from "../../assets/firstpage.png";
-import OptionSmall from "../../components/first-page/OptionSmall";
-import OptionMed from "../../components/first-page/OptionMed";
-import OptionLarge from "../../components/first-page/OptionLarge";
+import imghero from "../../assets/img-hero.png";
+import Brand from "../../components/Brand.js";
 
 const FirstPage = () => {
     return (
         <>
-            <Section>
-                <div className="flex-col pt-7 flex gap-10 md:pt-10 md:gap-10 lg:gap-16 lg:pt-14">
-                    <div className="flex justify-between items-center px-5 md:px-5 lg:px-0">
-                        <div className="text-7xl leading-[5rem] w-96 sm:text-7xl sm:leading-tight sm:w-96 md:text-7xl md:w-[26rem] md:px-0 lg:text-8xl lg:w-[30rem] lg:px-0">
-                            Ready to find your new home
-                        </div>
-                        <div className="border-solid border-gray-600 border-2 hidden sm:flex sm:h-[14.5rem] sm:mr-12 md:h-[12.7rem] md:mr-14 lg:h-[24rem] lg:ml-10"></div>
-                        <div className="hidden sm:flex sm:w-[15rem] sm:text-lg md:w-[20rem] md:text-2xl lg:w-[25rem] lg:text-4xl text-gray-400 text-right">
-                            looking for a house with a low price and quality
-                            here, and sell your house quickly here.
-                        </div>
-                    </div>
-
-                    <div className="relative">
-                        <img
-                            src={firstpage}
-                            alt=""
-                            className="h-60 w-full object-cover px-5 sm:w-full sm:h-full lg:px-0"
-                        />
-                        <OptionLarge />
-                    </div>
-                    <OptionSmall />
-                    <OptionMed />
+            <div className="flex flex-col px-5 lg:px-0 md:flex-row pt-20 md:pt-0 items-center gap-10 md:px-5 lg:pt-0 lg:flex-row lg:justify-between lg:items-center">
+                <div className="flex flex-col md:gap-8 gap-12 lg:7">
+                    <p className="font-serif text-6xl lg:text-6xl md:text-4xl md:w-[20rem] lg:w-[26rem]">
+                        Discover the Latest Fashion Trends
+                    </p>
+                    <p className="font-semibold lg:text-base md:text-xs w-96">
+                        From stylish dresses to trendy tops and must-have
+                        accessories, we have everything you need to stay on top
+                        of the latest fashion trends. Our expertly curated
+                        collection features the hottest styles from top
+                        designers, so you can always find the perfect look for
+                        any occasion. Shop now and discover your new favorite
+                        fashion pieces.
+                    </p>
+                    <button className="bg-orange-500 p-2 px-16 w-full md:w-72 rounded-lg font-semibold ">
+                        Shop Now
+                    </button>
                 </div>
-            </Section>
+                <div className="lg:w-[32rem] md:flex md:w-[24rem] hidden lg:flex">
+                    <img src={imghero} alt="" />
+                </div>
+            </div>
+            <Brand />
         </>
     );
 };

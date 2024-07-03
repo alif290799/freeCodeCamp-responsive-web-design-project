@@ -1,55 +1,70 @@
 import React from "react";
+import logo from "../assets/logo.png";
+import frame1 from "../assets/Frame 32.png";
+import frame2 from "../assets/Frame 35.png";
+
+const productCategory = [
+    "Women's clothing",
+    "Menswear",
+    "Accessories",
+    "Shoes",
+];
+
+const company = ["About", "Contact", "Privacy Policy", "Terms of Service"];
 
 const Footer = () => {
     return (
-        <footer className="bg-black text-white py-10">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-6">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
-                        Subscribe to get a discount of 30%
-                    </h2>
-                </div>
-                <div className="flex justify-center mb-6">
-                    <input
-                        type="email"
-                        placeholder="Enter your email address"
-                        className="px-4 py-2 w-2/3 md:w-1/3 lg:w-1/4 rounded-l-md focus:outline-none"
-                    />
-                    <button className="bg-gray-500 text-black px-4 py-2 rounded-r-md">
-                        Subscribe
+        <footer className="max-w-6xl mx-auto text-xs py-10 px-5 lg:px-0 grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div className="md:col-span-4">
+                <img src={logo} alt="DressLy" className="mb-4" />
+                <p className="text-black">
+                    We are an online fashion store that offers a diverse
+                    selection of the latest and trendiest fashion products for
+                    both men and women. Our collection includes everything from
+                    casual wear to formal attire, ensuring that you always have
+                    the perfect outfit for any occasion. We are dedicated to
+                    providing our customers with an enjoyable and hassle-free
+                    shopping experience, from the moment you browse our site to
+                    the time your order arrives at your doorstep. With a
+                    commitment to quality, style, and customer satisfaction, we
+                    strive to make fashion accessible and exciting for everyone.
+                </p>
+            </div>
+            <div className="md:col-span-2">
+                <h3 className="font-bold text-gray-900 mb-2">
+                    Product Category
+                </h3>
+                {productCategory.map((product, index) => (
+                    <div
+                        key={index}
+                        className="text-gray-500 pb-1 hover:underline"
+                    >
+                        <a href="/">{product}</a>
+                    </div>
+                ))}
+            </div>
+            <div className="md:col-span-2">
+                <h3 className="font-bold text-gray-900 mb-2">Company</h3>
+                {company.map((item, index) => (
+                    <div
+                        key={index}
+                        className="text-gray-500 pb-1 hover:underline"
+                    >
+                        <a href="/">{item}</a>
+                    </div>
+                ))}
+            </div>
+            <div className="md:col-span-4">
+                <h3 className="font-bold text-gray-900 mb-2">
+                    Download Our App
+                </h3>
+                <div className="flex space-x-4">
+                    <button>
+                        <img src={frame1} alt="App Store" />
                     </button>
-                </div>
-                <div className="flex justify-center space-x-4">
-                    <a href="/" aria-label="Instagram">
-                        <svg
-                            className="w-6 h-6"
-                            fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                        >
-                            <path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 2 .3 2.4.5.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.2.5 2.4.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.3 2-.5 2.4-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.2.4-2.4.5-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-2-.3-2.4-.5-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.2-.5-2.4-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.3-2 .5-2.4.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.2-.4 2.4-.5 1.2-.1 1.6-.1 4.8-.1zm0-2.2c-3.3 0-3.7 0-5 .1-1.3.1-2.2.3-2.9.5-1 .2-1.9.5-2.6 1.2-.7.7-1 1.5-1.2 2.6-.2.7-.4 1.6-.5 2.9-.1 1.3-.1 1.7-.1 5s0 3.7.1 5c.1 1.3.3 2.2.5 2.9.2 1 .5 1.9 1.2 2.6.7.7 1.5 1 2.6 1.2.7.2 1.6.4 2.9.5 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.3 2.9-.5 1-.2 1.9-.5 2.6-1.2.7-.7 1-1.5 1.2-2.6.2-.7.4-1.6.5-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.2-.5-2.9-.2-1-.5-1.9-1.2-2.6-.7-.7-1.5-1-2.6-1.2-.7-.2-1.6-.4-2.9-.5-1.3-.1-1.7-.1-5-.1zm0 5.4c-3.7 0-6.6 3-6.6 6.6s3 6.6 6.6 6.6 6.6-3 6.6-6.6-3-6.6-6.6-6.6zm0 10.8c-2.3 0-4.2-1.9-4.2-4.2s1.9-4.2 4.2-4.2 4.2 1.9 4.2 4.2-1.9 4.2-4.2 4.2zm6.8-11.7c0 .9-.7 1.6-1.6 1.6-.9 0-1.6-.7-1.6-1.6 0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6z" />
-                        </svg>
-                    </a>
-                    <a href="/" aria-label="Facebook">
-                        <svg
-                            className="w-6 h-6"
-                            fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                        >
-                            <path d="M22.7 0h-21.4c-.7 0-1.3.6-1.3 1.3v21.4c0 .7.6 1.3 1.3 1.3h11.6v-9.3h-3.1v-3.6h3.1v-2.6c0-3.1 1.9-4.8 4.7-4.8 1.3 0 2.4.1 2.7.1v3.1h-1.9c-1.5 0-1.8.7-1.8 1.7v2.4h3.6l-.5 3.6h-3.1v9.3h6.1c.7 0 1.3-.6 1.3-1.3v-21.4c0-.7-.6-1.3-1.3-1.3z" />
-                        </svg>
-                    </a>
-                    <a href="/" aria-label="Twitter">
-                        <svg
-                            className="w-6 h-6"
-                            fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                        >
-                            <path d="M24 4.6c-.9.4-1.8.6-2.8.8 1-.6 1.7-1.5 2.1-2.6-.9.6-1.9 1-2.9 1.3-1.3-1.3-3.1-1.3-4.4-.4-1.3 1-1.7 2.8-1 4.4-3.3-.2-6.2-1.7-8.1-4-.8 1.3-.4 3.1 1 4-.8 0-1.6-.2-2.3-.6v.1c0 1.5 1.1 2.8 2.6 3.1-.6.2-1.1.2-1.7.1.4 1.3 1.5 2.3 2.9 2.3-1.1.9-2.5 1.4-4.1 1.4-.3 0-.6 0-.9-.1 1.5 1 3.3 1.7 5.2 1.7 6.2 0 9.6-5.2 9.6-9.6v-.4c.6-.4 1.3-1 1.8-1.6-.6.3-1.3.5-2 .6.7-.4 1.3-1.1 1.7-1.8z" />
-                        </svg>
-                    </a>
+                    <button>
+                        <img src={frame2} alt="Google Play" />
+                    </button>
                 </div>
             </div>
         </footer>

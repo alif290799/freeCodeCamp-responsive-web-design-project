@@ -1,27 +1,30 @@
 import React from "react";
-import Section from "../../components/Section";
-import SwiperCard from "../../components/SwiperCard";
+import { topSelection } from "../../arrayData";
+import SwiperContainer from "../../components/SwiperContainer";
 
 const SecondPage = () => {
     return (
-        <>
-            <Section>
-                <div className="mt-64 sm:mt-36 md:mt-48 lg:mt-72">
-                    <div className="py-10 pt-5 px-5 lg:px-0 flex items-center gap-10 lg:gap-20">
-                        <p className="text-3xl lg:text-4xl font-semibold">
-                            The Latest
-                        </p>
-                        <p className="font-semibold text-xl lg:text-2xl text-orange-500">
-                            For Sale
-                        </p>
-                        <p className="font-semibold text-xl lg:text-2xl">
-                            To Rent
-                        </p>
+        <div>
+            <div className="px-5 lg:px-0 text-4xl font-serif pb-10">
+                Top Selection
+            </div>
+            <div className="hidden lg:flex flex-col lg:flex-row justify-center items-center gap-5">
+                {topSelection.map((selection, index) => (
+                    <div className="relative" key={index}>
+                        <img src={selection.src} alt="" />
                     </div>
-                    <SwiperCard></SwiperCard>
-                </div>
-            </Section>
-        </>
+                ))}
+            </div>
+            <div className="lg:hidden flex">
+                <SwiperContainer>
+                    {topSelection.map((selection, index) => (
+                        <div className="relative" key={index}>
+                            <img src={selection.src} alt="" />
+                        </div>
+                    ))}
+                </SwiperContainer>
+            </div>
+        </div>
     );
 };
 

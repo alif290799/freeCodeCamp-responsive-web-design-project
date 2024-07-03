@@ -1,7 +1,15 @@
 import React from "react";
 import { useState } from "react";
 
-const list = ["HOME", "TO RENT", "FOR SALE", "BLOG", "LOG IN"];
+const list = [
+    "SHOP",
+    "NEW ARRIVALS",
+    "SALE",
+    "BLOG",
+    "SEARCH",
+    "BAGS",
+    "PROFILE",
+];
 
 export const Hamburger = () => {
     const [triggerOpen, setTriggerOpen] = useState(false);
@@ -16,7 +24,7 @@ export const Hamburger = () => {
                     triggerOpen ? "flex" : "hidden"
                 } absolute bg-white top-0 left-0 right-0 flex flex-col justify-center items-center h-screen gap-8`}
             >
-                <ul className="flex flex-col items-center gap-5 text-4xl">
+                <ul className="flex flex-col items-center gap-5 text-3xl">
                     {list.map((list, index) => {
                         return (
                             <li>

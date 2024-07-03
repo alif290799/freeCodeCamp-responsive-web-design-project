@@ -1,23 +1,42 @@
 import React from "react";
-import TestimonialCard from "../../components/TestimonialCard";
+import { cards } from "../../arrayData";
+import Card from "../../components/Card";
+import SwiperContainer from "../../components/SwiperContainer";
 
 const ThirdPage = () => {
     return (
-        <div className="mb-14 mt-[-5rem]">
-            <div className="flex justify-between items-center mb-16 p-5 sm:p-5 lg:p-0 max-w-6xl mx-auto">
-                <div className="w-[22rem] md:w-[26rem] text-2xl md:text-3xl font-semibold">
-                    Some people are very <br /> satisfied buying a house here
-                </div>
-                <div>
-                    <a href="/" className="underline font-semibold">
-                        View All
-                    </a>
-                </div>
+        <>
+            <div className="px-5 lg:px-0 flex justify-between items-center pb-10">
+                <div className="text-4xl font-serif">Best Seller</div>
+                <button className="p-2 px-5 rounded font-semibold bg-orange-200 text-xs">
+                    See All
+                </button>
             </div>
-            <div className="max-w-6xl mx-auto">
-                <TestimonialCard />
+            <div className="hidden lg:flex justify-center items-center gap-5">
+                {cards.map((card, index) => (
+                    <Card
+                        key={index}
+                        productName={card.productName}
+                        img={card.img}
+                        price={card.price}
+                        rating={card.rating}
+                    />
+                ))}
             </div>
-        </div>
+            <div className="flex lg:hidden">
+                <SwiperContainer>
+                    {cards.map((card, index) => (
+                        <Card
+                            key={index}
+                            productName={card.productName}
+                            img={card.img}
+                            price={card.price}
+                            rating={card.rating}
+                        />
+                    ))}
+                </SwiperContainer>
+            </div>
+        </>
     );
 };
 
